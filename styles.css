@@ -868,6 +868,118 @@ header::before {
   color: var(--primary);
 }
 
+/* 賞・副賞セクション - シンプル版 */
+.awards-section {
+  background: var(--bg-secondary);
+}
+
+.awards-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.awards-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.award-item {
+  background: var(--bg-primary);
+  border-radius: 20px;
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-subtle);
+  border-left: 6px solid var(--neutral-300);
+  transition: all var(--transition-normal) var(--ease-smooth);
+}
+
+.award-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.award-item.grand-award {
+  border-left-color: var(--primary);
+  background: linear-gradient(135deg, var(--bg-primary) 0%, #FFF8F0 100%);
+}
+
+.award-item.excellent-award {
+  border-left-color: #007ACC;
+}
+
+.award-rank {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 2px solid var(--bg-secondary);
+}
+
+.award-rank .lucide {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.grand-award .award-rank .lucide {
+  color: var(--primary);
+}
+
+.excellent-award .award-rank .lucide {
+  color: #007ACC;
+}
+
+.rank-title {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.award-prize {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.prize-label {
+  font-size: var(--font-base);
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.prize-amount {
+  font-size: var(--font-3xl);
+  font-weight: 900;
+  color: var(--primary);
+}
+
+.prize-description {
+  font-size: var(--font-lg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* 旧スタイル互換性 */
+.prizes-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.prize-icon .lucide {
+  width: 48px;
+  height: 48px;
+}
+
+.prize-grand .prize-icon .lucide {
+  color: var(--text-white);
+}
+
+.prize-excellent .prize-icon .lucide {
+  color: var(--primary);
+}
+
 .prize-excellent .prize-value {
   color: var(--primary);
 }
@@ -2855,7 +2967,31 @@ html {
     gap: var(--spacing-md);
   }
   
-  /* 賞品グリッドのレスポンシブ対応 */
+  /* 賞・副賞セクションのレスポンシブ対応 */
+  .award-item {
+    padding: var(--spacing-lg);
+  }
+  
+  .award-rank {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+  
+  .award-rank .lucide {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .rank-title {
+    font-size: var(--font-lg);
+  }
+  
+  .prize-amount {
+    font-size: var(--font-2xl);
+  }
+  
+  /* 旧スタイル互換性 */
   .prizes-grid {
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
@@ -3041,6 +3177,28 @@ html {
   .category-badge {
     font-size: var(--font-xs);
     padding: 6px 12px;
+  }
+  
+  /* 賞・副賞セクションのモバイル対応 */
+  .award-item {
+    padding: var(--spacing-md);
+  }
+  
+  .award-rank .lucide {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .rank-title {
+    font-size: var(--font-base);
+  }
+  
+  .prize-amount {
+    font-size: var(--font-xl);
+  }
+  
+  .prize-description {
+    font-size: var(--font-base);
   }
   
   .prize-rank {
