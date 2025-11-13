@@ -1121,7 +1121,7 @@ header::before {
 }
 
 .awards-content {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -1984,6 +1984,18 @@ header::before {
 
 .org-list h4:last-child {
   border-bottom: none;
+}
+
+.org-list h4 a {
+  color: #000000;
+  text-decoration: none;
+  transition: color var(--transition-normal) var(--ease-smooth);
+  border-bottom: 1px solid transparent;
+}
+
+.org-list h4 a:hover {
+  color: #333333;
+  border-bottom-color: #333333;
 }
 
 /* 旧スタイルとの互換性 */
@@ -4012,6 +4024,9 @@ html {
   box-shadow: var(--shadow-medium);
   padding: var(--spacing-xl);
   margin-top: var(--spacing-md);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -4118,6 +4133,7 @@ html {
   border-radius: 8px;
   overflow: hidden;
   display: block;
+  text-align: center;
 }
 
 .map-image {
@@ -4128,6 +4144,7 @@ html {
   border-radius: 8px;
   display: block;
   box-shadow: var(--shadow-medium);
+  margin: 0 auto;
 }
 
 .map-placeholder-text {
@@ -4282,6 +4299,9 @@ html {
   box-shadow: var(--shadow-medium);
   padding: var(--spacing-xl);
   margin-top: var(--spacing-md);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* メイン説明エリア */

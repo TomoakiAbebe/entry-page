@@ -153,7 +153,7 @@ function initializeLandscapeSlider() {
       slidesPerView: 1,
       spaceBetween: 0,
       
-      // 自動再生設定（5秒間隔）
+      // 自動再生設定（3秒間隔）
       autoplay: {
         delay: 3000,
         disableOnInteraction: false,
