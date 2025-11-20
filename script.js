@@ -39,6 +39,7 @@ async function loadAllSections() {
     { name: 'terms', id: 'terms-container' },
     { name: 'ai-usage', id: 'ai-usage-container' },
     { name: 'schedule', id: 'schedule-container' },
+    { name: 'judges', id: 'judges-container' },
     { name: 'organization', id: 'organization-container' },
     { name: 'footer', id: 'footer-container' }
   ];
