@@ -162,7 +162,7 @@ function initializeLandscapeSlider() {
       
       // ページネーション設定
       pagination: {
-        el: '.swiper-pagination',
+        el: '.landscape-swiper .swiper-pagination',
         type: 'bullets',
         clickable: true,
       },
@@ -182,6 +182,44 @@ function initializeLandscapeSlider() {
   }
 }
 
+// マップ画像スライダーの初期化
+function initializeMapSlider() {
+  // Swiperが読み込まれているかチェック
+  if (typeof Swiper !== 'undefined') {
+    const mapSwiper = new Swiper('.map-swiper', {
+      // 基本設定
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 0,
+      
+      // 自動再生設定（5秒間隔）
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      
+      // ページネーション設定
+      pagination: {
+        el: '.map-swiper .swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+      },
+      
+      // エフェクト設定
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
+      
+      // 速度設定
+      speed: 800,
+    });
+  } else {
+    // Swiperが読み込まれていない場合は少し待ってから再試行
+    setTimeout(initializeMapSlider, 100);
+  }
+}
+
 // ページ読み込み時の初期化
 document.addEventListener('DOMContentLoaded', function() {
   // すべてのセクションを読み込み
@@ -198,5 +236,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 風景画像スライダーの初期化
     setTimeout(initializeLandscapeSlider, 500);
+    
+    // マップ画像スライダーの初期化
+    setTimeout(initializeMapSlider, 600);
   });
 });
